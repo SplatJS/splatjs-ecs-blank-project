@@ -2,12 +2,23 @@
   "name": "splat-ecs-starter-project",
   "version": "0.0.0",
   "description": "A Sample game",
+  "gameBounds": {
+    "width": 1920,
+    "height": 1080
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "offlineEnabled": true,
   "private": true,
   "main": "src/game.js",
   "scripts": {
     "build": "webpack",
     "clean": "rimraf build",
     "electron": "webpack && node electron.js",
+    "chrome-web-store": "webpack && node chrome-web-store.js",
     "lint": "eslint .",
     "start": "webpack-dev-server --hot --inline --content-base build/html --host 0.0.0.0 --port 4000",
     "watch": "webpack --watch"
@@ -38,6 +49,7 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
-    "splat-ecs": "^7.1.0"
+    "splat-ecs": "^7.1.0",
+    "zip-folder": "^1.0.0"
   }
 }
